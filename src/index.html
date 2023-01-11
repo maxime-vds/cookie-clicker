@@ -10,21 +10,20 @@
 
 <body>
   <main
-    class="bg-gradient-to-r from-cyan-500 to-blue-500 px-[35px] pt-10 h-screen sm:px-[70px] flex flex-col align-center items-center justify-center">
+    class="bg-gradient-to-r from-yellow-500 to-red-500 px-[35px] pt-10 h-screen sm:px-[70px] flex flex-col align-center items-center ">
 
-    <section class="flex flex-col gap-2">
-      <h1 class="text-white text-6xl">Hello, 👋 welcome to Cookie-Clicker</h1>
-     
-
-      <div class="py-4 flex flex-col gap-2">
-        <h2 class="text-4xl text-white">
-          Learn more about the tools used to build this here 👇
-        </h2>
-        <ul class="text-white text-2xl py-4 grid grid-cols-1 gap-2">
-          <li><a class="underline hover:text-purple-500" href="https://vitejs.dev/" target="_blank">Vite</a></li>
-          <li><a class="underline hover:text-purple-500" href="https://tailwindcss.com/docs/utility-first" target="_blank">Tailwind</a></li>
-        </ul>
-      </div>
+    <section class="flex flex-col gap-2 items-center">
+      <h1 class="text-white text-6xl">🍪Cookie-Clicker🍪</h1>
+        <br>
+        <img id ="cookie-img" class="w-3/4 " src="cookie.png" alt="">
+        <div class="border w-auto h-auto px-5 mt-5 flex ">
+          <p id = "cookieDisplay" class="text-5xl m-2">100</p>
+        </div>
+    </section>
+    <section id="buttons" class="mt-5">
+      <button id="multiplier" class="outline outline-2 rounded p-2 mx-2"></button>  
+      <button id="autoclicker" class="outline outline-2 rounded p-2 mx-2"></button>  
+      <button id="boost" class="outline outline-2 rounded p-2 mx-2" >Boost 200%</button>  
     </section>
 
   </main>
