@@ -64,3 +64,4 @@ If you'd like to contribute to the improvement of this template, feel free to cr
 ---
 
 &copy; 2022
+# cookie-clicker
