@@ -26,12 +26,12 @@ cookie.addEventListener("click",() => {
 });
 
 
-const cookieclicker= () => {
+const cookieclicker= (amontcookie) => {
     //button multiplicateur
     /*   
-    let multi = document.getElementById ("multybutton");
+    let multibutton = document.getElementById ("multybutton");
     
-    multi.addEventListener ("click", ()=> {
+    multibutton.addEventListener ("click", ()=> {
     let multyamontcookie= amontcookie * 2;
     console.log (multyamontcookie);
     
