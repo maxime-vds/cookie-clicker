@@ -12,7 +12,7 @@ let score= document.getElementById("pointcookie");
 cookie.addEventListener("click",() => {
     amountcookie += 1; 
     console.log (amountcookie);
-    score.textContent= ("le nombre de cookie" + amountcookie);
+    score.textContent= ("le nombre de cookie : " + amountcookie);
 });
 
 
