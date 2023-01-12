@@ -42,5 +42,8 @@ import "./index.css";
 
     //click the Booster button to to boost by 200% for 30 sec. (click event function)
 
+    //autoclciker function
+
+    //bonus booster function
 
 }) ()
