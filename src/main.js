@@ -3,6 +3,16 @@ import "./index.css";
 
 
 (() => {
+
+/* style souris 
+function setCursorByID(mm,cursorStyle) {
+    var elem;
+    if (document.getElementById &&
+       (elem=document.getElementById(mm)) ) {
+     if (elem.style) elem.style.cursor= pointer;
+    }
+   }*/
+   
 // les variables
 let amountcookie= 0;
 let cookie= document.getElementById("imgcookie");
@@ -17,6 +27,23 @@ cookie.addEventListener("click",() => {
 
 
 const cookieclicker= () => {
+    //button multiplicateur
+    /*   
+    let multi = document.getElementById ("multybutton");
+    
+    multi.addEventListener ("click", ()=> {
+    let multyamontcookie= amontcookie * 2;
+    console.log (multyamontcookie);
+    
+    });
+    
+    
+    */ 
+
+    //button autoclick
+
+
+    //button (bonus) boost
 
     
  
