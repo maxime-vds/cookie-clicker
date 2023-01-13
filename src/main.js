@@ -14,10 +14,11 @@ import "./index.css";
     
 
     //Declare the DOM elements 
-    let cookieImgButton= document.getElementById("cookie-img");
-    let multiplierButton= document.getElementById("multiplier");
+    let cookieImgButton= document.getElementById("cookie-img");     //class de l'img 
+    let multiplierButton= document.getElementById("multiplier");    // section du button multiplier 
     let autoclickerButton= document.getElementById("autoclicker");
     let boostButton= document.getElementById("boost");
+    //cookieDisplay
    
 
     //Push the values in the DOM elements
