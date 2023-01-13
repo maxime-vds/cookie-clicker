@@ -1,4 +1,15 @@
 import "./index.css";
+/* 
+To do:
+- eslint and prettier
+- typescript
+- localstorage or mongo db
+- reset button
+- notification when you buy stuff
+- div with the following:
+ - your assets bought
+ - total cookies spend
+*/
 (() => {
 
     //Declare asset values (ammounts and prices)
@@ -6,6 +17,7 @@ import "./index.css";
     let multiplier = {amount: 1, price: 10}
     let automater =  {amount: 0, price: 10}
     let boostPrice = 10
+   
     let booster = false
     
     //Declare the DOM elements 
@@ -14,6 +26,7 @@ import "./index.css";
     const multiplierBtn = document.getElementById('multiplier')
     const automaterBtn = document.getElementById('autoclicker')
     const boostBtn = document.getElementById('boost')
+    const resetbtn = document.getElementById('resetbtn')
     
     //Push the values in the DOM elements
     const pushDom = () => {
@@ -24,6 +37,8 @@ import "./index.css";
     } 
     pushDom()
 
+
+    // checks if you have enough cookies to perform the buy
     const checkPrice = (price) => {
         if( cookies >= price ){
             cookies = cookies - price
@@ -43,7 +58,7 @@ import "./index.css";
 
     //click the cookie to increment. (click event function)
     cookieImg.addEventListener('click', () => {
-        cookies = cookies + 1 * multiplier.amount
+        cookies = booster ? cookies + 1 * multiplier.amount*2 :  cookies + 1 * multiplier.amount
         cookieDisplay.innerHTML =`${Math.floor(cookies)}`
     })
 
@@ -65,26 +80,30 @@ import "./index.css";
         pushDom()
     })
 
+    //booster function      (click event function)
     boostBtn.addEventListener('click', () => { 
-        if(checkPrice(boostPrice)){
+        if(cookies >= boostPrice && booster === false){
+            cookies =cookies - boostPrice
             boostPrice *= 1.2 
-            let timer = 0
+            let timer = 5
             let boostInterval = setInterval(() => {
-                timer++
                 booster = true
+                timer--
                 console.log(timer, booster)  
-                if(timer === 10) {
+                if(timer <= 0) {
                     clearInterval(boostInterval)
                     booster = false
                 }
             }, 1000)
-            console.log(booster)
+            
+            
         }
+        else { console.log("booster is true", booster)}
         pushDom()
     })
 
+    // resetbtn.addEventListener('click',() => {
 
-    //click the Booster button to to boost by 200% for 30 sec. (click event function)
-
+    // })
 
 }) ()
