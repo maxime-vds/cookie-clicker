@@ -3,27 +3,31 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tailwind Template</title>
+
 </head>
 
 <body>
-  <main
-    class="bg-gradient-to-r from-yellow-500 to-red-500 px-[35px] pt-10 h-screen sm:px-[70px] flex flex-col align-center items-center ">
-
+ 
+  <main>
+    <br>
     <section class="flex flex-col gap-2 items-center">
-      <h1 class="text-white text-6xl">🍪Cookie-Clicker🍪</h1>
+      <img id ="font-img" class="w-3/4 " src="coco.png" alt="title">
+
         <br>
-        <img id ="cookie-img" class="w-3/4 " src="cookie.png" alt="">
-        <div class="border w-auto h-auto px-5 mt-5 flex ">
-          <p id = "cookieDisplay" class="text-5xl m-2">100</p>
+        <img id ="cookie-img" class="w-40 mt-3" src="coconut.png" alt="image-coconut">
+        <div class="border w-auto h-auto px-5 mt-5 flex rounded-full bg-cyan-600 hover:bg-cyan-600">
+          <p id = "cookieDisplay" class="text-5xl m-2 ">100</p>
         </div>
     </section>
-    <section id="buttons" class="mt-5">
-      <button id="multiplier" class="outline outline-2 rounded p-2 mx-2"></button>  
-      <button id="autoclicker" class="outline outline-2 rounded p-2 mx-2"></button>  
-      <button id="boost" class="outline outline-2 rounded p-2 mx-2" >Boost 200%</button>  
+    <section  id="buttons" class="mt-2 flex ">
+      <button id="multiplier" class="outline outline-2  rounded p-2  mx-8 "></button>  
+      <button id="autoclicker" class="outline outline-2   rounded p-2 mx-8"></button>
+      <button id="boost" class="outline outline-2 rounded p-2 mx-8" >Boost 200%</button> 
+    
+      <button id="resetbtn" class="outline outline-2  flex- initial w-64 bg-stone-800 rounded p-2 mx-2 text-white" >RESET</button>  
+
     </section>
 
   </main>
