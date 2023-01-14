@@ -1,10 +1,11 @@
 import "./index.css";
+
 /* 
 To do:
 1. eslint and prettier: Jo  
 2. typescript: Jo             
 3. localstorage or mongo db. (backend): Jo
-4. reset button: Max
+4. reset button function: Max
 5. responsiveness and  design: Carolina
 6. notification when you buy stuff. (bonus: if we could add +x next to the mouse cursor each time cookie is clicked would be cool) : (Max + Carolina )
 7. DIV or Section with the following:  Max + Carolina
@@ -13,34 +14,35 @@ To do:
   we could insert this in a navbar/sidebar that retracts on Mobile 
 8. in the navbar/sidebar add a link to a page with the game rules.Carolina
 9. Readme that contains a link to the project website, a picture of the project and the project description: Max
-10. Add and assign the above 9 tasks to Github board projects: Max
+10. Add and assign the above 9 tasks to Github board projects: Max  
 */
 
 (() => {
 
     //Declare assets with default values 
     const defaultValues = () => {
-        let cookies = 0
-        let multiplier = {amount: 1, price: 10}
-        let automater  = {amount: 0, price: 10}
-        let boosters   = {amount: 0, price: 10, active: false}
+        let cookies: number = 0
+        let multiplier: {amount: number, price: number}  = {amount: 1, price: 10}
+        let automater:  {amount: number, price: number}  = {amount: 0, price: 10}
+        let boosters:   {amount: number, price: number, active: boolean} = {amount: 0, price: 10, active: false}
         return [cookies, multiplier, automater, boosters]
     }
-    let [cookies, multiplier, automater, boosters] = defaultValues()  //destructuring defaultvalues() in variables
+    let [cookies, multiplier, automater, boosters] = 
+    defaultValues() as [number, {amount: number, price:number}, {amount: number, price: number}, {amount: number, price: number, active: boolean}] //destructuring defaultvalues in variables
 
     
     //Declare the DOM elements 
-    const cookieImg = document.getElementById('cookie-img')
-    const cookieDisplay = document.getElementById('cookieDisplay')
-    const multiplierBtn = document.getElementById('multiplier')
-    const automaterBtn = document.getElementById('autoclicker')
-    const boostBtn = document.getElementById('boost')
-    const resetbtn = document.getElementById('resetbtn')
-    
+    const cookieImg = document.getElementById('cookie-img') as HTMLImageElement
+    const cookieDisplay = document.getElementById('cookieDisplay') as HTMLParagraphElement
+    const multiplierBtn = document.getElementById('multiplier') as HTMLButtonElement
+    const automaterBtn = document.getElementById('autoclicker') as HTMLButtonElement
+    const boostBtn = document.getElementById('boost') as HTMLButtonElement
+    const resetbtn = document.getElementById('resetbtn') as HTMLButtonElement
+
     
     //Push the values in the DOM elements. So that the values are being displayed on the webpage
     const pushDom = () => {
-        cookieDisplay.innerHTML = `${Math.floor(cookies)}`
+        cookieDisplay.innerHTML = `${Math.floor(cookies as number)}`
         multiplierBtn.innerHTML = `Multipliers: ${Math.floor(multiplier.amount)}X <br> Price: ${Math.floor(multiplier.price)}`
         automaterBtn.innerHTML = `Automaters: ${Math.floor(automater.amount)}<br> Price: ${Math.floor(automater.price)}`
         boostBtn.innerHTML = `200% booster <br> Price: ${Math.floor(boosters.price)}`
@@ -49,9 +51,9 @@ To do:
 
 
     // Checks if you have enough cookies to perform a buy operation
-    const checkPrice = (price) => {
+    const checkPrice = (price: number) => {
         if( cookies >= price ){
-            cookies = cookies - price
+            cookies = cookies as number - price
             return true
         }
         else{
@@ -60,11 +62,9 @@ To do:
         } 
     }
 
-
     //calcuclates the increment rate
-    const incrementer = (assetAmount) => {
-        cookies = boosters.active ? cookies + 1 * assetAmount*3 :  cookies + 1 * assetAmount
-        return cookies
+    const incrementer = (assetAmount: number) => {
+        cookies = boosters.active  ? cookies + 1 * assetAmount *3 :  cookies + 1 * assetAmount
     }
 
     
