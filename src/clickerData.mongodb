@@ -1,0 +1,6 @@
+use('clicker');
+
+db.clickerValues.insertOne({"cookies": 0})
+db.clickerValues.insertOne({"multiplier": {"amount": 1, "price": 10}})
+db.clickerValues.insertOne({"automater":  {"amount": 0, "price": 10}})
+db.clickerValues.insertOne({"boosters": {"amount": 0, "price": 10, "active": false}})
