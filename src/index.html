@@ -9,6 +9,14 @@
 </head>
 
 <body>
+  <section class="container">
+    <nav class="fixed bg-transparent h-screen w-64 md:hidden block flex flex-col" style="background-color:rgba(255, 255, 255, 0.5)">
+  <a href="#" class="py-4 px-6 block text-black">Home</a>
+  <a href="#" class="py-4 px-6 block text-black">About</a>
+  <a href="#" class="py-4 px-6 block text-black">Contact</a>
+  </nav>
+
+  </section>
        
   <main>
     <br>
@@ -22,13 +30,15 @@
          
         </div>
     </section>
-    <section  id="buttons" class=" mx-contain  grid-cols-9 grid-rows-6 gap-0.5 place-items-center h-56">
+    <section  id="buttons">
+      <div class="grid grid-cols-3 gap-4">
       <button id="multiplier" class="outline outline-2  rounded  "></button>  
       <button id="autoclicker" class="outline outline-2   rounded "></button>
       <button id="boost" class="outline outline-2 rounded " >Boost 200%</button> 
-    
-      <button id="resetbtn" class="outline outline-2  flex- initial w-64 bg-stone-800 rounded p-2 mx-2 text-white flex mb-4" >RESET</button>  
-
+      </div>
+      <div class="flex justify-center mt-4 outline outline-2 ">
+      <button id="resetbtn">RESET</button>  
+      </div>
     </section>
 
   </main>
