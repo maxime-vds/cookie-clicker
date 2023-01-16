@@ -10,10 +10,15 @@
 </head>
 
 <body>
- 🐵🥥 🌴 🐒🙊 🧺️
+
+ <section class="title">
+ <div>
+  <h1><span>COCO</span>Clicker </h1><br>
+</div>
+ </section>
   <section >
-    <div class="relative bg-white">
-      <div class="absolute top-0 left-0 p-2">
+    <div class="absolute">
+      <div class=" absolute top-0 left-0 p-2">
         <button class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -21,18 +26,31 @@
       <div class="sidenav-content">
         <!-- votre contenu ici -->
 
-        <nav class="flex flex-col">
-          <h2>SCORE</h2>
+        <nav class="relative flex flex-col bg-cyan-700 xl:w-64">
+          <h2 class="font-mono">SCORE</h2>
           <a href="#" class="p-3 text-sm font-medium text-indigo-500 hover:text-indigo-600">
-            <i class="fa-solid fa-basket-shopping"></i>
+            <p>🧺️</p>
           </a>
           <a href="#" class="p-3 text-sm font-medium text-indigo-500 hover:text-indigo-600">
-            <i class="fa-solid fa-crow"></i>
+            <p>🌴</p>
           </a>
           <a href="#" class="p-3 text-sm font-medium text-indigo-500 hover:text-indigo-600">
-            <i class="fa-brands fa-pagelines"></i>
+            <p>🐒</p>
           </a>
-          <h2>INSTRUCTIONS</h2>
+          <h2  class="font-mono">INSTRUCTIONS</h2>
+          <div>
+          <p class="text-xs md:text-base xl:text-base">Coconut 🥥 cliquer est un jeu dont le but est de récolter un maximum de point en cliquant sur la noix de coco.
+            Chaque clic compte pour un point. Bien évidemment il est possible d’améliorer son score de points par clic avec l’aide de boutons bonus.
+            
+            Voici les boutons bonus :
+            🧺 -> rajoute un click supplément à celui de départ
+            
+            🌴 -> autoclick. (Rajoute un clic automatisé par seconde )
+            
+            🐒-> boost de 200% pendant 10 seconds (rajoute 200% par clic )
+            
+            Les boutons bonus augmente de prix à chaque achat et ils peuvent-êtres acheté à l’infini (excepté le 🐒 où il y faudra attendre que le délai soit terminé pour en acheté un autre).</p>
+          </div>
         </nav>
       <div class="absolute top-0 right-0 p-2">
         <button class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
@@ -46,7 +64,6 @@
     <main>
       <br>
       <section class="flex flex-col gap-2 items-center mt-8">
-        <img id ="font-img" class="w-3/4 " src="coco.png" alt="title">
   
           <br>
           <img id ="cookie-img" class="w-40 mt-20" src="coconut.png" alt="image-coconut">
@@ -55,14 +72,14 @@
            
           </div>
       </section>
-      <section  id="buttons">
-        <div class="grid grid-cols-3 gap-4 m-10 w-4/5">
-        <button id="multiplier" class="outline outline-2  rounded bg-red-400  "></button>  
-        <button id="autoclicker" class="outline outline-2   rounded bg-red-400 "></button>
-        <button id="boost" class="outline outline-2 rounded bg-red-400" >Boost 200%</button> 
+      <section class="mx-auto flex flex-col justify-center" id="buttons">
+        <div class="grid grid-cols-3 gap-4 m-10 w-4/5 lg:grid-cols-3">
+        <button id="multiplier" class="bg-grey-light border-t-2 border-r-8 border-b-2 border-l rounded-tr-sm rounded-b-sm opacity-50 shadow-lg font-mono"></button>  
+        <button id="autoclicker" class="text-xs text-gray-700 leading-normal font-bold px-2 bg-white border-gray-700 shadow-md outline-none hover:bg-gray-300 active:transform-translate-y-4 active:transform-translate-x-4 active:shadow-none text-center"></button>
+        <button id="boost" class="text-xs text-gray-700 leading-normal font-bold px-2 bg-white border-gray-700 shadow-md outline-none hover:bg-gray-300 active:transform-translate-y-4 active:transform-translate-x-4 active:shadow-none text-center">Boost 200%</button> 
         </div>
-        <div class="flex justify-center mt-4 outline outline-2 m-10 w-4/5 rounded bg-red-500">
-        <button id="resetbtn" >RESET</button>  
+        <div class="flex justify-center mt-4  m-10 w-4/5">
+        <button id="resetbtn" class="bg-blue-darkest border-t-2 border-r-4 border-b-2 border-l-4 border-dotted rounded-full border-green-darker p-4 font-mono text-3xl font-bold text-grey-lighter">RESET</button>  
         </div>
       </section>
   

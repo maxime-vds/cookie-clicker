@@ -2,19 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css?family=Sniglet');
+@import url('https://fonts.googleapis.com/css?family=Knewave');
+
+.title div {
+  text-align:center;
+  vertical-align:middle;
+}
+.title h1 {
+  font-family: 'Sniglet', cursive;
+  color: #AFFCF4;
+  font-size:2.1rem;
+  display: inline-block;
+  text-shadow:0 .5rem .5rem rgba(0,0,0,.5);
+  border:.2rem solid #FABBAA;
+  padding:1.2rem 2.1rem 1.4rem;
+  border-radius:1rem;
+  box-shadow:
+	inset 0 0 6px #BA051A,
+	inset 0 0 40px rgba(186,5,26, 0.3),
+  inset 0 0 100px rgba(186,5,26, 0.5),
+  0 0 6px #BA051A,
+	0 0 40px rgba(186,5,26, 0.3),
+  0 0 100px rgba(186,5,26, 0.5);
+  text-shadow:
+	0px 0px 5px #318BF7,
+	0px 0px 10px #318BF7,
+	0px 0px 10px #318BF7,
+	0px 0px 80px rgba(49,139,247, 0.6),
+	0px 0px 100px rgba(49,139,247, 0.9);
+  z-index:1;
+  position:relative;
+}
+
+
+.title h1 span {
+   color:#95d7d0;
+   text-shadow:0px 0px 5px #333;
+
+}
 body {
     background-image: url("back-ground.png");
    
   }
   
   .sidenav-content {
-    position: fixed;
+    
     top: 0;
     left: 0;
     height: 100%;
-    width: 300px;
-    padding: 32px;
-    background: white;
+    
+    padding: 24px;
+   
     transform: translateX(-100%);
     transition: transform 0.3s ease-out;
   }
