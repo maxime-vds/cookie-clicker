@@ -119,15 +119,8 @@ resetbtn.addEventListener('click',() => {
     boosters= {amount: 0, price: 10, active: false} ;
 
     pushDom();
-    console.log('cecie est reset');
-
-
-
 
 })
     
- 
-
-
 
 }) ()
