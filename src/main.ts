@@ -23,36 +23,36 @@ To do:
 
     // API of the mongo database : 
    //var axios = require('axios');
-    var data = JSON.stringify({
-        "collection": "clickerValues",
-        "database": "clicker",
-        "dataSource": "Cluster0",
-        "projection": {
-            "_id": 1
-        }
-    });
+    // var data = JSON.stringify({
+    //     "collection": "clickerValues",
+    //     "database": "clicker",
+    //     "dataSource": "Cluster0",
+    //     "projection": {
+    //         "_id": 1
+    //     }
+    // });
                 
-    var config = {
-        method: 'post',
-        url: 'https://data.mongodb-api.com/app/data-mphlm/endpoint/data/v1/action/findOne',
-        headers: {
-          'Content-Type': 'application/json',
-          //'Access-Control-Allow-Origin': 'http://localhost:3000',
-          'Access-Control-Request-Headers': '*',
-          'api-key': '1HKMICxPMpnK67Em4VFbSqbkrhAL6luNrGAGJF4Nwvu1SLUwcFiULPFHraeNi408',
-        },
-        data: data
-    };
+    // var config = {
+    //     method: 'post',
+    //     url: 'https://data.mongodb-api.com/app/data-mphlm/endpoint/data/v1/action/findOne',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       //'Access-Control-Allow-Origin': 'http://localhost:3000',
+    //       'Access-Control-Request-Headers': '*',
+    //       'api-key': '1HKMICxPMpnK67Em4VFbSqbkrhAL6luNrGAGJF4Nwvu1SLUwcFiULPFHraeNi408',
+    //     },
+    //     data: data
+    // };
                 
-    axios(config)
-        .then(function (response) {
-            console.log(JSON.stringify(response.data));
-        })
-        .catch(function (error) {
-            console.log("ai ai ai : ",error);
-        });
+    // axios(config)
+    //     .then(function (response) {
+    //         console.log(JSON.stringify(response.data));
+    //     })
+    //     .catch(function (error) {
+    //         console.log("ai ai ai : ",error);
+    //     });
 
-
+// let totalspend = 0
     
     
 
@@ -124,10 +124,12 @@ To do:
         if(checkPrice(multiplier.price)) {
             multiplier.amount ++
             multiplier.price *= 1.1
+            //totalspend = totalspend + multiplier.price
         }
         pushDom()
     })
 
+   
 
     //click the Automaters button to increment automaters.     
     automaterBtn.addEventListener('click', () => {
