@@ -28,9 +28,9 @@ const resetbtn = document.getElementById('resetbtn')
 //Push the values in the DOM elements. So that the values are being displayed on the webpage
 const pushDom = () => {
     cookieDisplay.innerHTML = `${Math.floor(cookies)}`
-    multiplierBtn.innerHTML = `Multipliers: ${Math.floor(multiplier.amount)}X <br> Price: ${Math.floor(multiplier.price)}`
-    automaterBtn.innerHTML = `Automaters: ${Math.floor(automater.amount)}<br> Price: ${Math.floor(automater.price)}`
-    boostBtn.innerHTML = `200% booster <br> Price: ${Math.floor(boosters.price)}`
+    multiplierBtn.innerHTML = `Panier/logo (Multipliers): ${Math.floor(multiplier.amount)}X <br> Price: ${Math.floor(multiplier.price)}`
+    automaterBtn.innerHTML = `Palmier/logo (Automaters): ${Math.floor(automater.amount)}<br> Price: ${Math.floor(automater.price)}`
+    boostBtn.innerHTML = `Singe/logo (200% booster) <br> Price: ${Math.floor(boosters.price)}`
 } 
 pushDom()
 
@@ -116,11 +116,25 @@ resetbtn.addEventListener('click',() => {
     cookies=0;
     multiplier= {amount: 1, price: 10};
     automater= {amount: 0, price: 10} ;
-    boosters= {amount: 0, price: 10, active: false} ;
+    boosters={amount: 0, price: 10, active: false} ;
 
     pushDom();
 
 })
     
+ //navbar
+const button = document.querySelector("button");
+const sidenav = document.querySelector(".sidenav-content");
+const closeButton = document.querySelector(".fa-times");
+
+button.addEventListener("click", function() {
+  sidenav.classList.toggle("active");
+  closeButton.classList.toggle("show");
+});
+
+
 
 }) ()
+
+
+

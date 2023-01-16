@@ -4,44 +4,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/378f80fb77.js" crossorigin="anonymous"></script>
   <title>Tailwind Template</title>
 
 </head>
 
 <body>
-  <section class="container">
-    <nav class="fixed bg-transparent h-screen w-64 md:hidden block flex flex-col" style="background-color:rgba(255, 255, 255, 0.5)">
-  <a href="#" class="py-4 px-6 block text-black">Home</a>
-  <a href="#" class="py-4 px-6 block text-black">About</a>
-  <a href="#" class="py-4 px-6 block text-black">Contact</a>
-  </nav>
+ 
+  <section >
+    <div class="relative bg-white">
+      <div class="absolute top-0 left-0 p-2">
+        <button class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <div class="sidenav-content">
+        <!-- votre contenu ici -->
 
-  </section>
-       
-  <main>
-    <br>
-    <section class="flex flex-col gap-2 items-center">
-      <img id ="font-img" class="w-3/4 " src="coco.png" alt="title">
+        <nav class="flex flex-col w-24">
 
-        <br>
-        <img id ="cookie-img" class="w-40 mt-3" src="coconut.png" alt="image-coconut">
-        <div class="border w-auto h-auto px-5 mt-5 flex rounded-full bg-cyan-600 hover:bg-cyan-600">
-          <p id = "cookieDisplay" class="text-5xl m-2 ">100</p>
-         
+          <a href="#" class="p-3 text-sm font-medium text-indigo-500 hover:text-indigo-600">Home</a>
+          <a href="#" class="p-3 text-sm font-medium text-indigo-500 hover:text-indigo-600">About</a>
+          <a href="#" class="p-3 text-sm font-medium text-indigo-500 hover:text-indigo-600">Services</a>
+        </nav>
+      <div class="absolute top-0 right-0 p-2">
+        <button class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </button>
+      </div>
+      </div>
+    </div>
+    
+    </section>
+    <main>
+      <br>
+      <section class="flex flex-col gap-2 items-center mt-8">
+        <img id ="font-img" class="w-3/4 " src="coco.png" alt="title">
+  
+          <br>
+          <img id ="cookie-img" class="w-40 mt-20" src="coconut.png" alt="image-coconut">
+          <div class="border w-auto h-auto px-5 mt-14 mb-16 flex rounded-full bg-cyan-600 hover:bg-cyan-600">
+            <p id = "cookieDisplay" class="text-5xl m-2 ">100</p>
+           
+          </div>
+      </section>
+      <section  id="buttons">
+        <div class="grid grid-cols-3 gap-4 m-10 w-4/5">
+        <button id="multiplier" class="outline outline-2  rounded bg-red-400  "></button>  
+        <button id="autoclicker" class="outline outline-2   rounded bg-red-400 "></button>
+        <button id="boost" class="outline outline-2 rounded bg-red-400" >Boost 200%</button> 
         </div>
-    </section>
-    <section  id="buttons">
-      <div class="grid grid-cols-3 gap-4">
-      <button id="multiplier" class="outline outline-2  rounded  "></button>  
-      <button id="autoclicker" class="outline outline-2   rounded "></button>
-      <button id="boost" class="outline outline-2 rounded " >Boost 200%</button> 
-      </div>
-      <div class="flex justify-center mt-4 outline outline-2 ">
-      <button id="resetbtn">RESET</button>  
-      </div>
-    </section>
-
-  </main>
+        <div class="flex justify-center mt-4 outline outline-2 m-10 w-4/5 rounded bg-red-500">
+        <button id="resetbtn" >RESET</button>  
+        </div>
+      </section>
+  
+      <section id="auteur">
+       <div class=" mt-14 mb-3 ml-8"><p class="italic font-serif font-medium"> Create and designd by young developper at BeCode :</p>   </div>
+       <div class="flex justify-center m-3"><p class="font-serif font-semibold">Carolina , Joseph and Maxime</p> </div>
+       <div class="flex justify-center"><p class="italic font-serif font-medium">2023.</p> </div> 
+        
+      </section>
+  
+    </main>
+       
+ 
   <script type="module" src="./main.js"></script>
 </body>
 
