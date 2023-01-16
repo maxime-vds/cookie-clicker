@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://kit.fontawesome.com/378f80fb77.js" crossorigin="anonymous"></script>
+  <script src="path/to/your/javascriptfile.js"></script>
   <title>Tailwind Template</title>
 
 </head>
@@ -57,6 +58,64 @@
         <div class="flex justify-center mt-4 outline outline-2 m-10 w-4/5 rounded bg-red-500">
         <button id="resetbtn" >RESET</button>  
         </div>
+      </section>
+
+
+
+      <!-- il s'agit dun test de toast (faire marcher le button close)-->
+      <section id="clock">
+
+        <div class="flex space-x-2 justify-center">
+          <div class="bg-white shadow-lg mx-auto w-96 max-w-full text-sm pointer-events-auto bg-clip-padding rounded-lg block" id="static-example" role="alert" aria-live="assertive" aria-atomic="true" data-mdb-autohide="false">
+            <div class=" bg-white flex justify-between items-center py-2 px-3 bg-clip-padding border-b border-gray-200 rounded-t-lg">
+              <p class="font-bold text-gray-500"> <h1>Règle du jeu :</h1>   </p>
+              <div class="flex items-center">
+                <p class="text-gray-600 text-xs">11 mins ago</p>
+                <button onclick="toggleClock(clock)" id="clockButton" type="button" class=" btn-close box-content w-4 h-4 ml-2 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline" data-mdb-dismiss="toast" aria-label="Close">X</button>
+              </div>
+            </div>
+            <div class="p-3 bg-white rounded-b-lg break-words text-gray-700">
+              <h4>Coconut 🥥 cliquer  est un jeu dont le but est de récolter un maximum de point en cliquant sur la noix de coco.</h4>
+
+
+                    <p>Chaque clic compte pour un point. 
+                    Bien évidemment il est possible d"’"améliorer son score de points par clic avec l"’"aide de boutons bonus.</p>
+
+                    <h4> Voici les boutons bonus : </h4>
+
+                    <p>🧺 -> rajoute un click supplément à celui de départ </p>
+                    <p>🌴 -> autoclick. (Rajoute un clic automatisé par seconde ) </p>
+                    <p>🐒-> boost de 200% pendant 10 seconds (rajoute 200% par clic ) </p>
+
+                    <p>Les boutons bonus augmente de prix à chaque achat et ils peuvent-êtres acheté à l"’"infini (excepté le 🐒 où il y faudra attendre que le délai soit terminé pour en acheté un autre).</p>
+
+                    <h3>!!!! Now play and Have a lot of fun !!!!</h3>
+
+                    <h4>Create and designed by => Carolina , Joseph and Maxime. </h4>
+
+                    <h5> ***Attention : ce jeu comporte des risques d"’"addiction veiller à vous référez à un adulte pour ne pas y rester des heures (dormir et manger restent important quand même ) … </h5>
+        
+              
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
       </section>
   
       <section id="auteur">
