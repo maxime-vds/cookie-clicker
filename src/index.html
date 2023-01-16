@@ -10,93 +10,55 @@
 </head>
 
 <body>
-  <section class="fixed bg-transparent h-screen w-24  dark:text-gray-100 md:hidden block flex flex-col">
-    <nav class="space-y-2" style="background-color:rgba(255, 255, 255, 0.5)">
-      <div class="sidebar fixed top-0 bottom-0 lg:left-0 left-[-300px] duration-1000
-    p-2 w-[300px] overflow-y-auto text-center bg-gray-900 shadow h-screen">
-    <div class="text-gray-100 text-xl">
-      <div class="p-2.5 mt-1 flex items-center rounded-md ">
-        <i class="bi bi-app-indicator px-2 py-1 bg-blue-600 rounded-md"></i>
-        <h1 class="text-[15px]  ml-3 text-xl text-gray-200 font-bold">Tailwindbar</h1>
-        <i class="bi bi-x ml-20 cursor-pointer lg:hidden" onclick="Openbar()"></i>
+ 
+  <section >
+    <div class="relative bg-white">
+      <div class="absolute top-0 left-0 p-2">
+        <button class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
-      <hr class="my-2 text-gray-600">
+      <div class="sidenav-content">
+        <!-- votre contenu ici -->
 
-      <div>
-        <div class="p-2.5 mt-3 flex items-center rounded-md 
-        px-4 duration-300 cursor-pointer  bg-gray-700">
-          <i class="bi bi-search text-sm"></i>
-          <input class="text-[15px] ml-4 w-full bg-transparent focus:outline-none" placeholder="Serach" />
-        </div>
+        <nav class="flex flex-col w-24">
 
-        <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
-          <i class="bi bi-house-door-fill"></i>
-          <span class="text-[15px] ml-4 text-gray-200">Home</span>
-        </div>
-        <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
-          <i class="bi bi-bookmark-fill"></i>
-          <span class="text-[15px] ml-4 text-gray-200">Bookmark</span>
-        </div>
-        <hr class="my-4 text-gray-600">
-        <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
-          <i class="bi bi-envelope-fill"></i>
-          <span class="text-[15px] ml-4 text-gray-200">Messages</span>
-        </div>
-
-        <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
-          <i class="bi bi-chat-left-text-fill"></i>
-          <div class="flex justify-between w-full items-center" onclick="dropDown()">
-            <span class="text-[15px] ml-4 text-gray-200">Chatbox</span>
-            <span class="text-sm rotate-180" id="arrow">
-              <i class="bi bi-chevron-down"></i>
-            </span>
-          </div>
-        </div>
-        <div class=" leading-7 text-left text-sm font-thin mt-2 w-4/5 mx-auto" id="submenu">
-          <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md mt-1">Social</h1>
-          <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md mt-1">Personal</h1>
-          <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md mt-1">Friends</h1>
-        </div>
-        <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span class="text-[15px] ml-4 text-gray-200">Logout</span>
-        </div>
-
+          <a href="#" class="p-3 text-sm font-medium text-indigo-500 hover:text-indigo-600">Home</a>
+          <a href="#" class="p-3 text-sm font-medium text-indigo-500 hover:text-indigo-600">About</a>
+          <a href="#" class="p-3 text-sm font-medium text-indigo-500 hover:text-indigo-600">Services</a>
+        </nav>
+      <div class="absolute top-0 right-0 p-2">
+        <button class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </button>
+      </div>
       </div>
     </div>
-  </div>
-  </nav>
-
-  </section>
+    
+    </section>
+  
        
   <main>
     <br>
-    <section class="flex flex-col gap-2 items-center mt-8">
+    <section class="flex flex-col gap-2 items-center">
       <img id ="font-img" class="w-3/4 " src="coco.png" alt="title">
 
         <br>
-        <img id ="cookie-img" class="w-40 mt-20" src="coconut.png" alt="image-coconut">
-        <div class="border w-auto h-auto px-5 mt-14 mb-16 flex rounded-full bg-cyan-600 hover:bg-cyan-600">
+        <img id ="cookie-img" class="w-40 mt-3" src="coconut.png" alt="image-coconut">
+        <div class="border w-auto h-auto px-5 mt-5 flex rounded-full bg-cyan-600 hover:bg-cyan-600">
           <p id = "cookieDisplay" class="text-5xl m-2 ">100</p>
          
         </div>
     </section>
     <section  id="buttons">
-      <div class="grid grid-cols-3 gap-4 m-10 w-4/5">
-      <button id="multiplier" class="outline outline-2  rounded bg-red-400  "></button>  
-      <button id="autoclicker" class="outline outline-2   rounded bg-red-400 "></button>
-      <button id="boost" class="outline outline-2 rounded bg-red-400" >Boost 200%</button> 
+      <div class="grid grid-cols-3 gap-4 w-4/5">
+      <button id="multiplier" class="outline outline-2  rounded  "></button>  
+      <button id="autoclicker" class="outline outline-2   rounded "></button>
+      <button id="boost" class="outline outline-2 rounded " >Boost 200%</button> 
       </div>
-      <div class="flex justify-center mt-4 outline outline-2 m-10 w-4/5 rounded bg-red-500">
-      <button id="resetbtn" >RESET</button>  
+      <div class="flex justify-center mt-4 outline outline-2 w-4/5">
+      <button id="resetbtn">RESET</button>  
       </div>
-    </section>
-
-    <section id="auteur">
-     <div class=" mt-14 mb-3 ml-8"><p class="italic font-serif font-medium"> Create and designd by young developper at BeCode :</p>   </div>
-     <div class="flex justify-center m-3"><p class="font-serif font-semibold">Carolina , Joseph and Maxime</p> </div>
-     <div class="flex justify-center"><p class="italic font-serif font-medium">2023.</p> </div> 
-      
     </section>
 
   </main>

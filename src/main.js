@@ -126,7 +126,16 @@ resetbtn.addEventListener('click',() => {
 
 })
     
- 
+ //navbar
+const button = document.querySelector("button");
+const sidenav = document.querySelector(".sidenav-content");
+const closeButton = document.querySelector(".fa-times");
+
+button.addEventListener("click", function() {
+  sidenav.classList.toggle("active");
+  closeButton.classList.toggle("show");
+});
+
 
 
 }) ()

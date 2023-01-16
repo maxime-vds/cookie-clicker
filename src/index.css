@@ -6,3 +6,26 @@ body {
     background-image: url("back-ground.png");
    
   }
+  
+  .sidenav-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    padding: 32px;
+    background: white;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+  }
+  
+  .sidenav-content.active {
+    transform: translateX(0);
+  }
+  .fa-times {
+    display: none;
+  }
+  .sidenav-content.active .fa-times{
+    display: block;
+  }
+  
