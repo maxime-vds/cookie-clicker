@@ -10,6 +10,7 @@ import "./index.css";
     let multiplier = {amount: 1, price: 10}
     let automater  = {amount: 0, price: 10}
     let boosters   = {amount: 0, price: 10, active: false}
+    console.log('ceci marche ?');
     return [cookies, multiplier, automater, boosters]
 }
 let [cookies, multiplier, automater, boosters] = defaultValues()  //destructuring defaultvalues() in variables
@@ -110,9 +111,20 @@ boostBtn.addEventListener('click', () => {
 })
 
 //reset Button, sets all variables to default value
-// resetbtn.addEventListener('click',() => {
+resetbtn.addEventListener('click',() => {
+    //defaultValues();
+    cookies=0;
+    multiplier= {amount: 1, price: 10};
+    automater= {amount: 0, price: 10} ;
+    boosters= {amount: 0, price: 10, active: false} ;
 
-// })
+    pushDom();
+    console.log('cecie est reset');
+
+
+
+
+})
     
  
 
