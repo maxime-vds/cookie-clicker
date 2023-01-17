@@ -123,17 +123,8 @@ boostBtn.addEventListener('click', () => {
 
 //reset Button, sets all variables to default value
 resetbtn.addEventListener('click',() => {
-    //defaultValues();
-    console.log(defaultValues())
-    // cookies=0;
-    // multiplier= {amount: 1, price: 10};
-    // automater= {amount: 0, price: 10} ;
-    // boosters={amount: 0, price: 10, active: false} ;
-
-    cookies = defaultValues()[0]
-
+    [cookies, multiplier, automater, boosters, totalcookies] = defaultValues();
     pushDom();
-
 })
     
  //navbar
