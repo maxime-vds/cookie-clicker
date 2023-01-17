@@ -125,9 +125,9 @@ resetbtn.addEventListener('click',() => {
     pushDom();
 
 })
-    
+
  //navbar
- const button = document.querySelector(".fa-bars");
+ const button = document.querySelector(".fa-trophy");
  const closeButton = document.querySelector(".fa-circle-xmark");
  const sidenav = document.querySelector(".sidenav-content");
 
@@ -142,6 +142,7 @@ resetbtn.addEventListener('click',() => {
      sidenav.classList.add("hidden");
      
  });
+ 
 
 
 }) ()
