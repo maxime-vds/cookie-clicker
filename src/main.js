@@ -31,6 +31,9 @@ const scoreBooster = document.getElementById('scoreBooster')
 //Push the values in the DOM elements. So that the values are being displayed on the webpage
 const pushDom = () => {
     cookieDisplay.innerHTML = `${Math.floor(cookies)}`
+    multiplierBtn.innerHTML = `<h1 class = "text-base md:text-xl xl:text-4xl">🧺️</h1> +${Math.floor(multiplier.amount)} <br> Price: ${Math.floor(multiplier.price)}`
+    automaterBtn.innerHTML = `<h1 class = "text-base md:text-xl xl:text-4xl">🌴</h1>  ${Math.floor(automater.amount)}<br> Price: ${Math.floor(automater.price)}`
+    boostBtn.innerHTML = `<h1 class = "text-base md:text-xl xl:text-4xl">🐒</h1> BOOST 3x <br> Price: ${Math.floor(boosters.price)}`
     multiplierBtn.innerHTML = `<h1 class = "text-4xl">🧺️</h1> +${Math.floor(multiplier.amount)} <br> Price: ${Math.floor(multiplier.price)}`
     automaterBtn.innerHTML = `<h1 class = "text-4xl">🌴</h1>  ${Math.floor(automater.amount)}<br> Price: ${Math.floor(automater.price)}`
     boostBtn.innerHTML = `<h1 class = "text-4xl">🐒</h1> BOOST 3x <br> Price: ${Math.floor(boosters.price)}`
@@ -126,9 +129,9 @@ resetbtn.addEventListener('click',() => {
     [cookies, multiplier, automater, boosters, totalcookies] = defaultValues();
     pushDom();
 })
-    
+
  //navbar
- const button = document.querySelector(".fa-bars");
+ const button = document.querySelector(".fa-trophy");
  const closeButton = document.querySelector(".fa-circle-xmark");
  const sidenav = document.querySelector(".sidenav-content");
 
@@ -143,6 +146,7 @@ resetbtn.addEventListener('click',() => {
      sidenav.classList.add("hidden");
      
  });
+ 
 
 
 }) ()
