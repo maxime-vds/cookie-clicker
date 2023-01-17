@@ -28,9 +28,9 @@ const resetbtn = document.getElementById('resetbtn')
 //Push the values in the DOM elements. So that the values are being displayed on the webpage
 const pushDom = () => {
     cookieDisplay.innerHTML = `${Math.floor(cookies)}`
-    multiplierBtn.innerHTML = `Panier/logo (Multipliers): ${Math.floor(multiplier.amount)}X <br> Price: ${Math.floor(multiplier.price)}`
-    automaterBtn.innerHTML = `Palmier/logo (Automaters): ${Math.floor(automater.amount)}<br> Price: ${Math.floor(automater.price)}`
-    boostBtn.innerHTML = `Singe/logo (200% booster) <br> Price: ${Math.floor(boosters.price)}`
+    multiplierBtn.innerHTML = `<h1 class = "text-4xl">🧺️</h1> +${Math.floor(multiplier.amount)} <br> Price: ${Math.floor(multiplier.price)}`
+    automaterBtn.innerHTML = `<h1 class = "text-4xl">🌴</h1>  ${Math.floor(automater.amount)}<br> Price: ${Math.floor(automater.price)}`
+    boostBtn.innerHTML = `<h1 class = "text-4xl">🐒</h1> BOOST 3x <br> Price: ${Math.floor(boosters.price)}`
 } 
 pushDom()
 
@@ -126,15 +126,18 @@ resetbtn.addEventListener('click',() => {
  const button = document.querySelector(".fa-bars");
  const closeButton = document.querySelector(".fa-circle-xmark");
  const sidenav = document.querySelector(".sidenav-content");
+
  
  button.addEventListener("click", function() {
    sidenav.classList.toggle("active");
+   sidenav.classList.remove("hidden");
  });
  
  closeButton.addEventListener("click", function() {
-   sidenav.classList.toggle("active");
+     sidenav.classList.toggle("active");
+     sidenav.classList.add("hidden");
+     
  });
- 
 
 
 }) ()
