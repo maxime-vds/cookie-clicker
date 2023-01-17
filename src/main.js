@@ -78,7 +78,7 @@ function fundsError() {
       showCloseButton: true,
       autoclose: true,
       autotimeout: 2000,
-      gap: 300,
+      gap: 20,
       distance: 20,
       type: 1,
       position: 'left bottom'
@@ -181,14 +181,14 @@ resetbtn.addEventListener('click',() => {
 
  
  button.addEventListener("click", function() {
-   sidenav.classList.toggle("active");
-   sidenav.classList.remove("hidden");
+    sidenav.classList.toggle("active");
+    sidenav.classList.toggle("hidden");
  });
  
  closeButton.addEventListener("click", function() {
      sidenav.classList.toggle("active");
      sidenav.classList.add("hidden");
-     
+  
  });
  
 
