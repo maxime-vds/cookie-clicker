@@ -1,8 +1,9 @@
 import "./index.css";
-
+import Notify from 'simple-notify'
 
 (() => {
 
+    
  //Declare assets with default values 
  const defaultValues = () => {
     let totalcookies = 0
@@ -10,11 +11,10 @@ import "./index.css";
     let multiplier = {amount: 1, price: 10}
     let automater  = {amount: 0, price: 10}
     let boosters   = {amount: 0, price: 10, active: false}
-    console.log('ceci marche ?');
     return [cookies, multiplier, automater, boosters, totalcookies]
 }
 let [cookies, multiplier, automater, boosters, totalcookies] = defaultValues()  //destructuring defaultvalues() in variables
-
+//let notifier = new AWN(options)
 
 //Declare the DOM elements 
 const cookieImg = document.getElementById('cookie-img')
@@ -23,16 +23,66 @@ const multiplierBtn = document.getElementById('multiplier')
 const automaterBtn = document.getElementById('autoclicker')
 const boostBtn = document.getElementById('boost')
 const resetbtn = document.getElementById('resetbtn')
+const scoreCookie = document.getElementById('scoreCookie')
+const scoreMultiplier = document.getElementById('scoreMultiplier')
+const scoreAutomater = document.getElementById('scoreAutomater')
+const scoreBooster = document.getElementById('scoreBooster')
 
 
 //Push the values in the DOM elements. So that the values are being displayed on the webpage
 const pushDom = () => {
     cookieDisplay.innerHTML = `${Math.floor(cookies)}`
-    multiplierBtn.innerHTML = `<h1 class = "text-4xl">🧺️</h1> +${Math.floor(multiplier.amount)} <br> Price: ${Math.floor(multiplier.price)}`
-    automaterBtn.innerHTML = `<h1 class = "text-4xl">🌴</h1>  ${Math.floor(automater.amount)}<br> Price: ${Math.floor(automater.price)}`
-    boostBtn.innerHTML = `<h1 class = "text-4xl">🐒</h1> BOOST 3x <br> Price: ${Math.floor(boosters.price)}`
+
+    multiplierBtn.innerHTML = `<h1 class = "text-base md:text-xl xl:text-4xl py-2">🧺️</h1> +${Math.floor(multiplier.amount)} <br> Price: ${Math.floor(multiplier.price)}`
+    automaterBtn.innerHTML = `<h1 class = "text-base md:text-xl xl:text-4xl">🌴</h1>  ${Math.floor(automater.amount)}<br> Price: ${Math.floor(automater.price)}`
+    boostBtn.innerHTML = `<h1 class = "text-base md:text-xl xl:text-4xl">🐒</h1> BOOST 3x <br> Price: ${Math.floor(boosters.price)}`
+
+ 
+    scoreCookie.innerHTML = `🥥: ${totalcookies}`
+    scoreMultiplier.innerHTML = `🧺️: ${multiplier.amount - 1}`
+    scoreAutomater.innerHTML = `🌴: ${automater.amount}`
+    scoreBooster.innerHTML = `🐒: ${boosters.amount}`
 } 
 pushDom()
+
+function pushNotify(asset) {
+    new Notify({
+      status: 'success',
+      title: `${asset}`,
+      text: `You just bought a ${asset}`,
+      effect: 'fade',
+      speed: 500,
+      customClass: null,
+      customIcon: null,
+      showIcon: true,
+      showCloseButton: false,
+      autoclose: true,
+      autotimeout: 500,
+      gap: 0,
+      distance: 0,
+      type: 1,
+      position: 'right top'
+    })
+  }
+function fundsError() {
+    new Notify({
+      status: 'warning',
+      title: `NOT ENOUGH COCO`,
+      text: `You dont have enough coco to buy this`,
+      effect: 'fade',
+      speed: 500,
+      customClass: null,
+      customIcon: null,
+      showIcon: true,
+      showCloseButton: true,
+      autoclose: true,
+      autotimeout: 2000,
+      gap: 300,
+      distance: 20,
+      type: 1,
+      position: 'left bottom'
+    })
+  }
 
 
 // Checks if you have enough cookies to perform a buy operation
@@ -42,7 +92,8 @@ const checkPrice = (price) => {
         return true
     }
     else{
-        alert("not enough cookies")
+        console.log('not enough coco')
+        fundsError()
         return false
     } 
 }
@@ -51,8 +102,7 @@ const checkPrice = (price) => {
 //calcuclates the increment rate
 const incrementer = (assetAmount) => {
     cookies = boosters.active ? cookies + 1 * assetAmount*3 :  cookies + 1 * assetAmount
-    //totalcookies = boosters.active ? totalcookies + 1 * assetAmount*3 :  totalcookies + 1 * assetAmount
-    console.log("totalcookies : ", totalcookies)
+    totalcookies = boosters.active ? totalcookies + 1 * assetAmount*3 :  totalcookies + 1 * assetAmount
     return cookies
 }
 
@@ -66,10 +116,9 @@ setInterval(()=> {
 
 //click the cookie to increment. 
 cookieImg.addEventListener('click', () => {
-   totalcookies = totalcookies + multiplier.amount 
-   incrementer(multiplier.amount)
-   //console.log("total cookies", totalcookies)
-   pushDom()
+    incrementer(multiplier.amount)
+    pushDom()
+    
 })
 
 
@@ -78,6 +127,7 @@ multiplierBtn.addEventListener("click", () => {
     if(checkPrice(multiplier.price)) {
         multiplier.amount ++
         multiplier.price *= 1.1
+        pushNotify('Basket')
     }
     pushDom()
 })
@@ -88,6 +138,7 @@ automaterBtn.addEventListener('click', () => {
     if(checkPrice(automater.price)){
         automater.amount ++
         automater.price *= 1.1
+        pushNotify('Palm Tree')
     }  
     pushDom()
 })
@@ -97,7 +148,9 @@ automaterBtn.addEventListener('click', () => {
 //Before activating the booster, the function checks if the booster is already active or not.     
 boostBtn.addEventListener('click', () => { 
     if(cookies >= boosters.price && boosters.active  === false){
+        pushNotify('Monkey')
         cookies =cookies - boosters.price
+        boosters.amount++
         boosters.price *= 1.1 
         boosters.active  = true
         let timer = 10
@@ -116,18 +169,12 @@ boostBtn.addEventListener('click', () => {
 
 //reset Button, sets all variables to default value
 resetbtn.addEventListener('click',() => {
-    //defaultValues();
-    cookies=0;
-    multiplier= {amount: 1, price: 10};
-    automater= {amount: 0, price: 10} ;
-    boosters={amount: 0, price: 10, active: false} ;
-
+    [cookies, multiplier, automater, boosters, totalcookies] = defaultValues();
     pushDom();
-
 })
-    
+
  //navbar
- const button = document.querySelector(".fa-bars");
+ const button = document.querySelector(".fa-trophy");
  const closeButton = document.querySelector(".fa-circle-xmark");
  const sidenav = document.querySelector(".sidenav-content");
 
@@ -142,6 +189,7 @@ resetbtn.addEventListener('click',() => {
      sidenav.classList.add("hidden");
      
  });
+ 
 
 
 }) ()
