@@ -11,14 +11,10 @@
 
 <body>
 
- <section class="title">
- <div>
-  <h1><span>COCO</span>Clicker </h1><br>
-</div>
- </section>
+ 
   <section >
     <div class="absolute">
-      <div class=" absolute top-0 left-0 p-2">
+      <div class=" relative top-0 left-0 p-2">
         <button class="bg-transparent hover:text-gray-700 focus:outline-none focus:text-gray-700">
           <i class="fa-solid fa-trophy">?</i>
         </button>
@@ -26,8 +22,8 @@
       <div class="sidenav-content hidden">
         <!-- votre contenu ici -->
 
-        <nav class="relative flex flex-col bg-slate-400 xl:w-64">
-          <h2 class="font-mono">SCORE</h2>
+        <nav class="relative flex flex-col bg-slate-400 xl:w-2/3">
+          <h2 class="font-mono  bg-sky-200 m-8">SCORE</h2>
 
           <p class="p-3 text-sm font-medium text-indigo-500 hover:text-indigo-600">
             <p id= "scoreCookie" class= "text-3xl mx-5">🥥: 0 </p>
@@ -41,7 +37,7 @@
           <p class="p-3 text-sm font-medium text-indigo-500 hover:text-indigo-600 ">
             <p id ="scoreBooster" class ="text-3xl mx-5 mb-3">🐒: 0 </p>
           </p>
-          <div class="my-5 bg-sky-200 m-8" style="">
+          <div class="my-5 bg-sky-200 m-8">
             <h2  class="font-mono">INSTRUCTIONS</h2>
           
           
@@ -61,6 +57,23 @@
             </p>
           
           </div>
+
+          <div class="my-5 bg-sky-200 m-8">
+            <h3 class=" text-xs font-mono">Created and designed by young developers at BeCode:</h3>
+          
+          
+            <p class="text-xs text-left font-mono justify-center xl:text-base">
+            <ul class="text-xs text-left font-mono justify-center xl:text-base">
+
+              <li>Carolina,Joseph,Maxime</li>
+              <li>2023</li>
+              
+
+            </ul>
+            
+            </p>
+          
+          </div>
         </nav>
 
         
@@ -71,16 +84,20 @@
         </div>
       </div>
     </div>
-    
+    <section class="title">
+      <div>
+       <h1><span>COCO</span>Clicker </h1><br>
+     </div>
+      </section>
     </section>
     <main>
       <br>
-      <section  class="flex flex-col gap-2 items-center mt-8">
+      <section  class="flex flex-col gap-2 items-center mt-8 md:space-y-3 xl:space-y-4">
   
           <br>
-            <div id ="cookie-img"><img class="w-40 mt-20" src="coconut.png" alt="image-coconut"></div>
-          <div class="border w-auto h-auto px-5 mt-14 mb-16 flex rounded-full bg-sky-800 hover:bg-sky-600">
-            <p id = "cookieDisplay" class="text-5xl m-2 ">100</p>
+            <div id ="cookie-img"><img class="w-20 mt-20 cursor-pointer md:w-24 xl:w-32" src="coconut.png" alt="image-coconut"></div>
+          <div class="border w-auto h-1/5 px-5 mt-14 mb-15 flex rounded-full bg-sky-800 text-white">
+            <p id = "cookieDisplay" class="text-4xl m-2 ">100</p>
            
           </div>
       </section>
@@ -91,16 +108,11 @@
         <button id="boost" class="text-xs text-gray-700 bg-sky-200 leading-normal font-bold px-2 bg-white border-gray-700 shadow-md outline-none hover:bg-gray-300 active:transform-translate-y-4 active:transform-translate-x-4 active:shadow-none text-center font-mono">Boost 200%</button> 
         </div>
         <div class="flex justify-center mt-4  m-10 w-4/5 xl: mx-auto w-2/5">
-        <button id="resetbtn" class="bg-blue-darkest font-mono border-t-2 border-r-4 border-b-2 border-l-4 border-dotted rounded-full border-green-darker p-4 font-mono text-3xl font-bold text-grey-lighter  hover:bg-stone-800 active:transform-translate-y-4 active:transform-translate-x-4 active:shadow-none text-center">RESET</button>  
+        <button id="resetbtn" class="bg-stone-500 hover:bg-sky-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-stone-500 rounded">RESET</button>  
         </div>
       </section>
   
-      <section id="auteur">
-       <div class=" mt-14 mb-3 ml-8"><p class="italic font-serif font-medium"> Create and designd by young developper at BeCode :</p>   </div>
-       <div class="flex justify-center m-3"><p class="font-serif font-semibold">Carolina , Joseph and Maxime</p> </div>
-       <div class="flex justify-center"><p class="italic font-serif font-medium">2023.</p> </div> 
-        
-      </section>
+      
   
     </main>
        
