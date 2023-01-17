@@ -31,12 +31,10 @@ const scoreBooster = document.getElementById('scoreBooster')
 //Push the values in the DOM elements. So that the values are being displayed on the webpage
 const pushDom = () => {
     cookieDisplay.innerHTML = `${Math.floor(cookies)}`
-    multiplierBtn.innerHTML = `<h1 class = "text-base md:text-xl xl:text-4xl">🧺️</h1> +${Math.floor(multiplier.amount)} <br> Price: ${Math.floor(multiplier.price)}`
-    automaterBtn.innerHTML = `<h1 class = "text-base md:text-xl xl:text-4xl">🌴</h1>  ${Math.floor(automater.amount)}<br> Price: ${Math.floor(automater.price)}`
-    boostBtn.innerHTML = `<h1 class = "text-base md:text-xl xl:text-4xl">🐒</h1> BOOST 3x <br> Price: ${Math.floor(boosters.price)}`
-    multiplierBtn.innerHTML = `<h1 class = "text-4xl">🧺️</h1> +${Math.floor(multiplier.amount)} <br> Price: ${Math.floor(multiplier.price)}`
-    automaterBtn.innerHTML = `<h1 class = "text-4xl">🌴</h1>  ${Math.floor(automater.amount)}<br> Price: ${Math.floor(automater.price)}`
-    boostBtn.innerHTML = `<h1 class = "text-4xl">🐒</h1> BOOST 3x <br> Price: ${Math.floor(boosters.price)}`
+    multiplierBtn.innerHTML = `<h1 class = "text-xs md:text-xl xl:text-4xl">🧺️</h1> +${Math.floor(multiplier.amount)} <br> Price: ${Math.floor(multiplier.price)}`
+    automaterBtn.innerHTML = `<h1 class = "text-xs md:text-xl xl:text-4xl">🌴</h1>  ${Math.floor(automater.amount)}<br> Price: ${Math.floor(automater.price)}`
+    boostBtn.innerHTML = `<h1 class = "text-xs md:text-xl xl:text-4xl">🐒</h1> BOOST 3x <br> Price: ${Math.floor(boosters.price)}`
+    
     scoreCookie.innerHTML = `🥥: ${totalcookies}`
     scoreMultiplier.innerHTML = `🧺️: ${multiplier.amount}`
     scoreAutomater.innerHTML = `🌴: ${automater.amount}`
