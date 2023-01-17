@@ -38,7 +38,7 @@ const pushDom = () => {
     automaterBtn.innerHTML = `<h1 class = "text-4xl">🌴</h1>  ${Math.floor(automater.amount)}<br> Price: ${Math.floor(automater.price)}`
     boostBtn.innerHTML = `<h1 class = "text-4xl">🐒</h1> BOOST 3x <br> Price: ${Math.floor(boosters.price)}`
     scoreCookie.innerHTML = `🥥: ${totalcookies}`
-    scoreMultiplier.innerHTML = `🧺️: ${multiplier.amount}`
+    scoreMultiplier.innerHTML = `🧺️: ${multiplier.amount - 1}`
     scoreAutomater.innerHTML = `🌴: ${automater.amount}`
     scoreBooster.innerHTML = `🐒: ${boosters.amount}`
 } 
