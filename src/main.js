@@ -1,19 +1,19 @@
 import "./index.css";
 
 
-
 (() => {
 
  //Declare assets with default values 
  const defaultValues = () => {
+    let totalcookies = 0
     let cookies = 0
     let multiplier = {amount: 1, price: 10}
     let automater  = {amount: 0, price: 10}
     let boosters   = {amount: 0, price: 10, active: false}
     console.log('ceci marche ?');
-    return [cookies, multiplier, automater, boosters]
+    return [cookies, multiplier, automater, boosters, totalcookies]
 }
-let [cookies, multiplier, automater, boosters] = defaultValues()  //destructuring defaultvalues() in variables
+let [cookies, multiplier, automater, boosters, totalcookies] = defaultValues()  //destructuring defaultvalues() in variables
 
 
 //Declare the DOM elements 
@@ -51,6 +51,8 @@ const checkPrice = (price) => {
 //calcuclates the increment rate
 const incrementer = (assetAmount) => {
     cookies = boosters.active ? cookies + 1 * assetAmount*3 :  cookies + 1 * assetAmount
+    //totalcookies = boosters.active ? totalcookies + 1 * assetAmount*3 :  totalcookies + 1 * assetAmount
+    console.log("totalcookies : ", totalcookies)
     return cookies
 }
 
@@ -64,7 +66,9 @@ setInterval(()=> {
 
 //click the cookie to increment. 
 cookieImg.addEventListener('click', () => {
+   totalcookies = totalcookies + multiplier.amount 
    incrementer(multiplier.amount)
+   //console.log("total cookies", totalcookies)
    pushDom()
 })
 
