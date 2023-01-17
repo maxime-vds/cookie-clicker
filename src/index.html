@@ -3,32 +3,122 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/378f80fb77.js" crossorigin="anonymous"></script>
   <title>Tailwind Template</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css" />
 </head>
 
 <body>
-  <main
-    class="bg-gradient-to-r from-cyan-500 to-blue-500 px-[35px] pt-10 h-screen sm:px-[70px] flex flex-col align-center items-center justify-center">
 
-    <section class="flex flex-col gap-2">
-      <h1 class="text-white text-6xl">Hello, 👋 welcome to Cookie-Clicker git</h1>
-      <h1 class="text-white text-6xl"></h1>
-
-      <div class="py-4 flex flex-col gap-2">
-        <h2 class="text-4xl text-white">
-          Learn more about the tools used to build this here 👇
-        </h2>
-        <ul class="text-white text-2xl py-4 grid grid-cols-1 gap-2">
-          <li><a class="underline hover:text-purple-500" href="https://vitejs.dev/" target="_blank">Vite</a></li>
-          <li><a class="underline hover:text-purple-500" href="https://tailwindcss.com/docs/utility-first" target="_blank">Tailwind</a></li>
-        </ul>
+ 
+  <section >
+    <div class="absolute">
+      <div class=" relative top-0 left-0 p-2">
+        <button class="bg-transparent hover:text-gray-700 focus:outline-none focus:text-gray-700">
+          <i class="fa-solid fa-trophy">?</i>
+        </button>
       </div>
-    </section>
+      <div class="sidenav-content hidden">
+        <!-- votre contenu ici -->
 
-  </main>
+        <nav class="relative flex flex-col bg-slate-400 xl:w-2/3">
+          <h2 class="font-mono  bg-sky-200 m-8">SCORE</h2>
+
+          <p class="p-3 text-sm font-medium text-indigo-500 hover:text-indigo-600">
+            <p id= "scoreCookie" class= "text-3xl mx-5">🥥: 0 </p>
+          </p>
+          <p class="p-3 text-sm font-medium text-indigo-500 hover:text-indigo-600">
+            <p id ="scoreMultiplier" class= "text-3xl mx-5">🧺️: 1 </p>
+          </p>
+          <p class="p-3 text-sm font-medium text-indigo-500 hover:text-indigo-600">
+            <p id ="scoreAutomater" class = "text-3xl mx-5">🌴: 0/sec </p>
+          </p>
+          <p class="p-3 text-sm font-medium text-indigo-500 hover:text-indigo-600 ">
+            <p id ="scoreBooster" class ="text-3xl mx-5 mb-3">🐒: 0 </p>
+          </p>
+          <div class="my-5 bg-sky-200 m-8">
+            <h2  class="font-mono">INSTRUCTIONS</h2>
+          
+          
+            <p class="text-xs text-left font-mono justify-center xl:text-base">Coconut 🥥 cliquer est un jeu dont le but est de récolter un maximum de point en cliquant sur la noix de coco. Chaque clic compte pour un point. Bien évidemment il est possible d’améliorer son score de points par clic avec l’aide de boutons bonus.<br>
+            <br>
+            Voici les boutons bonus :
+            <ul class="text-xs text-left font-mono justify-center xl:text-base">
+
+              <li>🧺 Rajoute un click supplément à celui de départ</li>
+              <li>🌴 Autoclick. (Rajoute un clic automatisé par seconde )</li>
+              <li>🐒 Boost de 200% pendant 10 seconds (rajoute 200% par clic )</li>
+              <br>
+
+              <li>Les boutons bonus augmentent de prix à chaque achat et ils peuvent être achetés à l’infini (excepté le 🐒 où il faudra attendre que le délai soit terminé pour en acheter un autre).</li>
+            </ul>
+            
+            </p>
+          
+          </div>
+
+          <div class="my-5 bg-sky-200 m-8">
+            <h3 class=" text-xs font-mono">Created and designed by young developers at BeCode:</h3>
+          
+          
+            <p class="text-xs text-left font-mono justify-center xl:text-base">
+            <ul class="text-xs text-left font-mono justify-center xl:text-base">
+
+              <li>Carolina,Joseph,Maxime</li>
+              <li>2023</li>
+              
+
+            </ul>
+            
+            </p>
+          
+          </div>
+        </nav>
+
+        
+        <div class="absolute top-0 right-0 p-2">
+          <button class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <section class="title">
+      <div>
+       <h1><span>COCO</span>Clicker </h1><br>
+     </div>
+      </section>
+    </section>
+    <main>
+      <br>
+      <section  class="flex flex-col gap-2 items-center mt-8 md:space-y-3 xl:space-y-4">
+  
+          <br>
+            <div id ="cookie-img"><img class="w-20 mt-20 cursor-pointer md:w-24 xl:w-32" src="coconut.png" alt="image-coconut"></div>
+          <div class="border w-auto h-1/5 px-5 mt-14 mb-15 flex rounded-full bg-sky-800 text-white">
+            <p id = "cookieDisplay" class="text-4xl m-2 ">100</p>
+           
+          </div>
+      </section>
+      <section  id="buttons" class="mx-auto flex flex-col justify-center">
+        <div class="grid grid-cols-3 gap-4 m-10 w-4/5 xl: mx-auto w-2/5">
+        <button id="multiplier"  class="text-xs text-gray-700 bg-sky-200 leading-normal font-bold px-2 bg-white border-gray-700 shadow-md outline-none hover:bg-gray-300 active:transform-translate-y-4 active:transform-translate-x-4 active:shadow-none text-center font-mono"></button>  
+        <button id="autoclicker" class="text-xs text-gray-700 bg-sky-200 leading-normal font-bold px-2 bg-white border-gray-700 shadow-md outline-none hover:bg-gray-300 active:transform-translate-y-4 active:transform-translate-x-4 active:shadow-none text-center font-mono"></button>
+        <button id="boost" class="text-xs text-gray-700 bg-sky-200 leading-normal font-bold px-2 bg-white border-gray-700 shadow-md outline-none hover:bg-gray-300 active:transform-translate-y-4 active:transform-translate-x-4 active:shadow-none text-center font-mono">Boost 200%</button> 
+        </div>
+        <div class="flex justify-center mt-4  m-10 w-4/5 xl: mx-auto w-2/5">
+        <button id="resetbtn" class="bg-stone-500 hover:bg-sky-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-stone-500 rounded">RESET</button>  
+        </div>
+      </section>
+  
+      
+  
+    </main>
+       
+    <script src="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.js"></script>
   <script type="module" src="./main.js"></script>
+  
 </body>
 
 </html>
