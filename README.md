@@ -13,7 +13,7 @@ Ceux-ci peuvent être échanger contre des points de coco clic.
 
 ### Picture/image of game : ….
 
-the picture  
+![screenshot of the coco-clicker game](/src/game.PNG)
   
 
 Voici les règles du jeu :
