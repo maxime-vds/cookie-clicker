@@ -185,11 +185,11 @@ resetbtn.addEventListener('click',() => {
     sidenav.classList.toggle("hidden");
  });
  
- closeButton.addEventListener("click", function() {
-     sidenav.classList.toggle("active");
-     sidenav.classList.add("hidden");
+//  closeButton.addEventListener("click", function() {
+//      sidenav.classList.toggle("active");
+//      sidenav.classList.add("hidden");
   
- });
+//  });
  
 
 
