@@ -2,7 +2,7 @@ Bienvenu sur notre jeu 🥥 Coco-Clicker 🥥
 ===================================
 
 
-### Link :[Coco-clicker Game]()
+### Link :[Coco-clicker Game](https://buidlor.github.io/coco-clicker-og/)
 
 (Picture of game : …. ici ou en dessous du descriptif )
 
@@ -11,7 +11,7 @@ Il s’agit d’un jeu basé sur les fonctionnalités de JavaScript dont le but 
 Les boutons sont représentés par des emojis palmier 🌴, singes 🐒 et panier 🧺.  
 Ceux-ci peuvent être échanger contre des points de coco clic.
 
-### Picture/image of game : ….
+### Picture/image of game :
 
 ![screenshot of the coco-clicker game](/src/game.PNG)
   
@@ -63,6 +63,9 @@ This is a template to use for a `html` + `vanillajs` + `tailwindcss` project. En
 
 - `npm install` Install les dependance.
 - `npm run dev` lance un serveur local de développement qui recharge automatiquement le front-end et les scripts.
+- `npm run build` compile le projet dans le dossier dist.
+- `npm run serve` lance un serveur local du build de production.
+- `npm run pages` déploie le contenu du dossier dist sur GitHub Pages.
 
 _Note: Cette [extension VSCode](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) permet de se faciliter la vie avec les classes de `tailwindcss`._
 
