@@ -1,9 +1,16 @@
 import "./index.css";
 import Notify from 'simple-notify'
+import axios from 'axios';
 
 (() => {
 
-    
+ axios.get('http://localhost:3001/api/getAll')
+    .then(response => {
+        console.log(response.data)
+    })   
+    .catch(error =>{
+        console.log(error.message)
+    })
  //Declare assets with default values 
  const defaultValues = () => {
     let totalcookies = 0
@@ -14,7 +21,7 @@ import Notify from 'simple-notify'
     return [cookies, multiplier, automater, boosters, totalcookies]
 }
 let [cookies, multiplier, automater, boosters, totalcookies] = defaultValues()  //destructuring defaultvalues() in variables
-//let notifier = new AWN(options)
+
 
 //Declare the DOM elements 
 const cookieImg = document.getElementById('cookie-img')
@@ -37,8 +44,6 @@ const pushDom = () => {
     automaterBtn.innerHTML = `<h1 class = "text-xs md:text-xl xl:text-4xl">🌴</h1>  ${Math.floor(automater.amount)} Price: ${Math.floor(automater.price)}`
     boostBtn.innerHTML = `<h1 class = "text-xs md:text-xl xl:text-4xl">🐒</h1> Boost 3x Price: ${Math.floor(boosters.price)}`
     
-
-
     scoreCookie.innerHTML = `🥥: ${totalcookies}`
     scoreMultiplier.innerHTML = `🧺️: ${multiplier.amount - 1}`
     scoreAutomater.innerHTML = `🌴: ${automater.amount}`
@@ -93,7 +98,6 @@ const checkPrice = (price) => {
         return true
     }
     else{
-        console.log('not enough coco')
         fundsError()
         return false
     } 
