@@ -4,7 +4,6 @@ Bienvenu sur notre jeu 🥥 Coco-Clicker 🥥
 
 ### Link :[Coco-clicker Game](https://buidlor.github.io/coco-clicker-og/)
 
-(Picture of game : …. ici ou en dessous du descriptif )
 
 Il s’agit d’un jeu basé sur les fonctionnalités de JavaScript dont le but est d’obtenir un maximum de point avec l’aide de "boutons bonus".
 
