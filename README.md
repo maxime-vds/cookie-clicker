@@ -1,20 +1,18 @@
 Bienvenu sur notre jeu 🥥 Coco-Clicker 🥥
 ===================================
 
-###### Create and designed by => Carolina , Joseph and Maxime.
 
-### Link :[Coco-clicker Game](https://maxime-vds.github.io/cookie-clicker/)
+### Link :[Coco-clicker Game](https://buidlor.github.io/coco-clicker-og/)
 
-(Picture of game : …. ici ou en dessous du descriptif )
 
 Il s’agit d’un jeu basé sur les fonctionnalités de JavaScript dont le but est d’obtenir un maximum de point avec l’aide de "boutons bonus".
 
 Les boutons sont représentés par des emojis palmier 🌴, singes 🐒 et panier 🧺.  
 Ceux-ci peuvent être échanger contre des points de coco clic.
 
-### Picture/image of game : ….
+### Picture/image of game :
 
-the picture  
+![screenshot of the coco-clicker game](/src/game.PNG)
   
 
 Voici les règles du jeu :
@@ -36,7 +34,6 @@ Les boutons bonus augmente de prix à chaque achat et ils peuvent-êtres acheté
 
 ### !!!! Now play and Have a lot of fun !!!!
 
-#### Create and designed by => Carolina , Joseph and Maxime.
 
 ##### \*\*\*Attention : ce jeu comporte des risques d’addiction veiller à vous référez à un adulte pour ne pas y rester des heures (dormir et manger restent important quand même) …
 
@@ -55,7 +52,7 @@ This is a template to use for a `html` + `vanillajs` + `tailwindcss` project. En
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-dark.svg">
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg">
-      <img alt="Tailwind CSS" src="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg" width="350" height="70" style="max-width: 50%;">
+      <img alt="Tailwind CSS" src="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg" width="250" height="40" style="max-width: 50%;">
     </picture>
   </a>
 </p>
@@ -63,7 +60,11 @@ This is a template to use for a `html` + `vanillajs` + `tailwindcss` project. En
 
 ### Développement 🏋️
 
+- `npm install` Install les dependance.
 - `npm run dev` lance un serveur local de développement qui recharge automatiquement le front-end et les scripts.
+- `npm run build` compile le projet dans le dossier dist.
+- `npm run serve` lance un serveur local du build de production.
+- `npm run pages` déploie le contenu du dossier dist sur GitHub Pages.
 
 _Note: Cette [extension VSCode](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) permet de se faciliter la vie avec les classes de `tailwindcss`._
 
