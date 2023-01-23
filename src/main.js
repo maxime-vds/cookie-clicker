@@ -2,26 +2,50 @@ import "./index.css";
 import Notify from 'simple-notify'
 import axios from 'axios';
 
-(() => {
+(async () => {
 
- axios.get('http://localhost:3001/api/getAll')
+let dataMango
+await axios.get('http://localhost:3001/api/getAll')
     .then(response => {
-        console.log(response.data)
+        dataMango = response.data
     })   
     .catch(error =>{
         console.log(error.message)
     })
+
+
  //Declare assets with default values 
  const defaultValues = () => {
-    let totalcookies = 0
-    let cookies = 0
-    let multiplier = {amount: 1, price: 10}
-    let automater  = {amount: 0, price: 10}
-    let boosters   = {amount: 0, price: 10, active: false}
+    let totalcookies = dataMango[0].totalcookies
+    let cookies = dataMango[0].cookies
+    let multiplier = dataMango[0].multiplier
+    let automater  = dataMango[0].automater
+    let boosters   = dataMango[0].boosters
     return [cookies, multiplier, automater, boosters, totalcookies]
 }
 let [cookies, multiplier, automater, boosters, totalcookies] = defaultValues()  //destructuring defaultvalues() in variables
+console.log("the values at start are: ", defaultValues())
 
+// update the mongo DB
+const updateDB = async () => {
+    const id = "63cd533572e83c152b9d78d7"
+    const update = {
+        totalcookies: totalcookies,
+        cookies: cookies,
+        multiplier: multiplier,
+        automater: automater,
+        boosters: boosters
+    }
+   return axios.patch(`http://localhost:3001/api/update/${id}`, update)
+   .then(response => {
+        return response.data
+   })
+   .catch(error =>{
+    console.log(error.message)
+   })
+}
+const result = await updateDB()
+ console.log("show me the result of the update: " , await updateDB())
 
 //Declare the DOM elements 
 const cookieImg = document.getElementById('cookie-img')
@@ -41,7 +65,7 @@ const pushDom = () => {
     cookieDisplay.innerHTML = `${Math.floor(cookies)}`
 
     multiplierBtn.innerHTML = `<h1 class = "text-xs md:text-xl xl:text-4xl">🧺️</h1> +${Math.floor(multiplier.amount)} Price: ${Math.floor(multiplier.price)}`
-    automaterBtn.innerHTML = `<h1 class = "text-xs md:text-xl xl:text-4xl">🌴</h1>  ${Math.floor(automater.amount)} Price: ${Math.floor(automater.price)}`
+    automaterBtn.innerHTML = `<h1 class = "text-xs md:text-xl xl:text-4xl">🌴</h1>  ${Math.floor(automater.amount)}/sec Price: ${Math.floor(automater.price)}`
     boostBtn.innerHTML = `<h1 class = "text-xs md:text-xl xl:text-4xl">🐒</h1> Boost 3x Price: ${Math.floor(boosters.price)}`
     
     scoreCookie.innerHTML = `🥥: ${totalcookies}`
@@ -95,6 +119,7 @@ function fundsError() {
 const checkPrice = (price) => {
     if( cookies >= price ){
         cookies = cookies - price
+        updateDB()
         return true
     }
     else{
@@ -108,7 +133,7 @@ const checkPrice = (price) => {
 const incrementer = (assetAmount) => {
     cookies = boosters.active ? cookies + 1 * assetAmount*3 :  cookies + 1 * assetAmount
     totalcookies = boosters.active ? totalcookies + 1 * assetAmount*3 :  totalcookies + 1 * assetAmount
-    return cookies
+   
 }
 
 
@@ -122,8 +147,9 @@ setInterval(()=> {
 //click the cookie to increment. 
 cookieImg.addEventListener('click', () => {
     incrementer(multiplier.amount)
+    updateDB()   
     pushDom()
-    
+ 
 })
 
 
@@ -133,6 +159,7 @@ multiplierBtn.addEventListener("click", () => {
         multiplier.amount ++
         multiplier.price *= 1.1
         pushNotify('Basket')
+        updateDB()
     }
     pushDom()
 })
@@ -144,6 +171,7 @@ automaterBtn.addEventListener('click', () => {
         automater.amount ++
         automater.price *= 1.1
         pushNotify('Palm Tree')
+        updateDB()
     }  
     pushDom()
 })
@@ -170,11 +198,12 @@ boostBtn.addEventListener('click', () => {
     }
     else { console.log("booster is already active or not enough coockies", boosters.active )}
     pushDom()
+    updateDB()
 })
 
 //reset Button, sets all variables to default value
 resetbtn.addEventListener('click',() => {
-    [cookies, multiplier, automater, boosters, totalcookies] = defaultValues();
+    console.log([cookies, multiplier, automater, boosters, totalcookies])
     pushDom();
 })
 
@@ -189,13 +218,6 @@ resetbtn.addEventListener('click',() => {
     sidenav.classList.toggle("hidden");
  });
  
-//  closeButton.addEventListener("click", function() {
-//      sidenav.classList.toggle("active");
-//      sidenav.classList.add("hidden");
-  
-//  });
- 
-
 
 }) ()
 
